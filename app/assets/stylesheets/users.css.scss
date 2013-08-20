@@ -1,0 +1,31 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	background-color: #F6CEE3;
+	padding-bottom: 0px;
+	margin-bottom:0px;
+	padding-top: 0px;
+	margin-top:0px;
+	border-top: 0px ;
+}
+
+#header{
+	padding-bottom: 0px;
+	margin-bottom:0px;
+	padding-top: 0px;
+	margin-top:0px;
+	border-top: 0px;
+	border-bottom: 0px; 
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color:#FA58AC; 
+	height: 100px;
+}
+
+#content{
+	background-color: #F8E0EC;
+	margin-top:80px;
+	height: 80px;
+}

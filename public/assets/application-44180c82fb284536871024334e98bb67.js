@@ -1,6 +1,5 @@
 // Some general UI pack related JS
 // Extend JS String with repeat method
-//= require jquery.ui.all
 String.prototype.repeat = function(num) {
   return new Array(num + 1).join(this);
 };

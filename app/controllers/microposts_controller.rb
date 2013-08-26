@@ -25,10 +25,11 @@ class MicropostsController < ApplicationController
   # POST /microposts.json
   def create
     @micropost = Micropost.new(micropost_params)
+    @user = User.find(1)
 
     respond_to do |format|
       if @micropost.save
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
+        format.html { redirect_to @user, notice: 'Micropost was successfully created.' }
         format.json { render action: 'show', status: :created, location: @micropost }
       else
         format.html { render action: 'new' }

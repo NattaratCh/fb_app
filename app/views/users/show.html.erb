@@ -1,22 +1,21 @@
-<div id = "container">
+<div id = "container" style="height:100%">
   <div id="header" style="background-color:#088A68; height: 100px;">
   </div>
-  <p></p>
   <ul class="breadcrumb">
     <li>
       <a href="/users/1">MY PROFILE </a>
     </li>
   </ul>
-  <div id="content" style="height: 300px">
-    <div id="profile">
-      <div class="popover right" style="width: 20%">
+  <div id="content" style="height: 200%">
+    <div id="profile" style="height: 100%">
+      <div class="popover right" style="width: 25%">
       <div class="arrow"></div>
       <h3 class="popover-title">MY PROFILE      <%= link_to 'Edit', edit_user_path(@user) %></h3>
       <div class="popover-content">
-        <img src = "C:/Sites/rails_projects/fb_app/Girl_2x.png"  width="100px" height="100px"><br/>
+        <%= image_tag("Dude_2x.png") %>
           <strong>Name:</strong>
           <%= @user.name %><br/> 
-          <strong>Edu:</strong>
+          <strong>Education:</strong>
           <%= @user.edu %><br/> 
           <strong>Hobby:</strong>
           <%= @user.hobby %><br/> 
@@ -25,12 +24,32 @@
           <strong>Relationship:</strong>
           <%= @user.relationship %><br/> 
       </div>
-    </div>
-    <div id="post">
-      <div id="status" style="width:40%">
-        <textarea class="span6" rows="3"  placeholder="What is your status?"></textarea>
       </div>
     </div>
+    <div id="post">
+      <div id="status" style="width:100%">
+        <h3>POST YOUR STATUS</h3>
+        <%= form_for(Micropost.new) do |f| %>
+          <div class="field">
+            <%= f.text_area :content %>
+          </div>
+          <button class="btn btn-embossed btn-primary">
+            POST
+          </button>
+        <% end %>
+      </div>
+    </div>
+    <div id ="status-list">  
+        <h3>STATUS</h3>
+        <% @microposts.each do |micropost| %>  
+          <div class ="each-status">
+            <b><%= @user.name %> post:</b><br/>
+            <%= micropost.content %>
+            <div align="right"><%= micropost.created_at %></div>
+          <div>
+          <p></p>
+        <% end %>
+    </div> 
         
   </div>
 </div>
